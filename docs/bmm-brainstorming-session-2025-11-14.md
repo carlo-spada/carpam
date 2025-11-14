@@ -242,8 +242,9 @@ El problema NO es tecnológico (falta de software). El problema ES cultural/perc
 - **Interacciones medidas en segundos, no minutos**
 - **Feedback inmediato visible** ("acabas de ahorrar 30 min de búsqueda de info")
 - **Onboarding progresivo** (empezar con 1-2 campos, crecer gradualmente)
-- **Funciona sin internet** (taller no siempre tiene buena conexión)
+- **Cloud-first con PWAs** (aplicaciones web progresivas específicas por usuario)
 - **Accesible desde celular** (carpinteros no están frente a computadoras)
+- **Web pública integrada** (captación de clientes + contenido de marketing)
 
 
 
@@ -844,20 +845,23 @@ Después de analizar todas las ideas generadas, estas son las 3 prioridades crí
 
 ### Areas for Further Exploration
 
-- **Stack tecnológico:** ¿Qué framework/tecnologías usar para garantizar simplicidad (UX más simple que WhatsApp) + offline-first + mobile-friendly?
+- **Stack tecnológico cloud-first:** ¿Qué framework/tecnologías usar para garantizar simplicidad (UX más simple que WhatsApp) + PWAs específicas por usuario + web pública + mobile-friendly?
+- **Arquitectura multi-tenant:** ¿Single database con row-level security vs bases de datos separadas por cliente? ¿BaaS (Firebase, Supabase) vs backend custom?
 - **Estrategia de adopción:** ¿Cómo hacer la transición sin frenar la producción? ¿Piloto con 1-2 proyectos primero?
 - **Modelo de datos detallado:** Los 16 campos del Contrato de Entrada necesitan especificación técnica completa (tipos, validaciones, relaciones)
 - **Integración de pagos:** ¿Qué gateway usar para capturar anticipos y trigger la conversión Cotización → OT?
 - **Plantillas de PRODUCTO:** ¿Cómo estructurar las plantillas parametrizables de clósets/cocinas/puertas para Fase 2?
+- **SEO y Marketing:** ¿SSR/SSG para web pública vs SPA para PWAs? ¿Compartir componentes en monorepo?
 
 ### Recommended Follow-up Techniques
 
 Para las próximas sesiones (Research y Product Brief):
 
-- **Research técnico:** Investigar soluciones existentes de ERP para talleres/manufactura custom - ¿qué se puede aprender/adaptar?
+- **Research técnico cloud-first:** Investigar stacks modernos (Next.js/SvelteKit + Supabase/Firebase), arquitecturas multi-tenant, PWA best practices 2025
 - **User research:** Entrevistar a tu papá (Estimador) y 1-2 carpinteros para validar asunciones sobre adopción
 - **Competitive analysis:** Analizar sistemas de gestión de proyectos usados por arquitectos - ¿cómo se integraría el sistema con sus flujos?
 - **Technical spike:** Prototipar rápidamente el formulario de OT + Kanban básico para validar viabilidad técnica
+- **Web/Marketing research:** Estrategias SEO para carpinterías, CMS headless para contenido público, integración PWA + sitio público
 
 ### Questions That Emerged
 
@@ -865,14 +869,15 @@ Para las próximas sesiones (Research y Product Brief):
 - ¿Qué tan granular debe ser el registro de horas por carpintero? ¿Por proyecto completo? ¿Por etapa? ¿Por día?
 - ¿Cómo manejar cambios de scope mid-project? ¿Versiones de OT? ¿Change orders formales?
 - ¿Qué datos son públicos vs privados? ¿Los carpinteros ven costos? ¿Los arquitectos ven márgenes?
-- Para funcionar offline (taller sin internet constante): ¿sincronización automática o manual? ¿Conflicts resolution?
+- **Arquitectura cloud:** ¿Cómo estructurar PWAs específicas por usuario? ¿Single PWA con roles o múltiples PWAs (carpintero, estimador, admin)?
+- **Escalabilidad:** ¿Diseñar desde día 1 para multi-taller (SaaS potencial) o enfoque single-tenant inicialmente?
 
 ### Next Session Planning
 
 - **Suggested topics:**
-  1. **Research workflow:** Investigación técnica (stacks, arquitectura, offline-first patterns)
+  1. **Research workflow:** Investigación técnica (stacks cloud-first, arquitectura multi-tenant, PWA patterns, BaaS vs custom backend)
   2. **Product Brief workflow:** Definir visión estratégica, KPIs de éxito, roadmap de fases
-  3. **PRD workflow:** Especificación detallada de MVP (Contrato Entrada + Kanban + Flujo unificado)
+  3. **PRD workflow:** Especificación detallada de MVP (Contrato Entrada + Kanban + Flujo unificado + Web pública)
 
 - **Recommended timeframe:** 1-2 días entre sesiones para procesar insights
 
